@@ -8,7 +8,7 @@ const {
   useMultiFileAuthState,
   fetchLatestBaileysVersion,
   DisconnectReason
-} = require('@adiwajshing/baileys');
+} = require('@whiskeysockets/baileys');
 const P = require('pino');
 
 const app = express();
