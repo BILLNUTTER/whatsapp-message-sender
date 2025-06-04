@@ -56,7 +56,7 @@ function saveLog(email, message, numbers, status) {
 }
 
 // Register
-app.post('/api/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   const { email, phone, password } = req.body;
   const users = loadUsers();
   if (users[email]) return res.status(409).json({ error: 'User already exists' });
@@ -68,7 +68,7 @@ app.post('/api/register', async (req, res) => {
 });
 
 // Login
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const users = loadUsers();
   const user = users[email];
@@ -82,7 +82,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 // Logout
-app.post('/api/logout', (req, res) => {
+app.post('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) return res.status(500).json({ error: 'Failed to logout' });
     res.json({ success: true });
