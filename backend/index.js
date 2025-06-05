@@ -20,7 +20,7 @@ const authDir = path.join(__dirname, "auth_info_multi");
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://billbroadcastsender.netlify.app/",
+    origin: true, // Allow all origins for local dev
     credentials: true,
   })
 );
@@ -57,6 +57,12 @@ function saveLog(email, message, numbers, status) {
   });
   fs.writeFileSync(logDBPath, JSON.stringify(logs, null, 2));
 }
+
+// Local Storage Simulation Middleware
+app.use((req, res, next) => {
+  if (!req.session.localStore) req.session.localStore = {};
+  next();
+});
 
 // Register
 app.post("/register", async (req, res) => {
@@ -104,6 +110,7 @@ app.post("/login", async (req, res) => {
   }
 
   req.session.user = { email };
+  req.session.localStore.loggedIn = true;
   console.log(`User logged in: ${email}`);
   res.json({ success: true });
 });
@@ -228,6 +235,14 @@ app.get("/api/logs", requireAuth, (req, res) => {
     ? JSON.parse(fs.readFileSync(logDBPath))
     : {};
   res.json(logs[req.session.user.email] || []);
+});
+
+app.get("/status", (req, res) => {
+  if (req.session.user) {
+    res.json({ loggedIn: true, email: req.session.user.email });
+  } else {
+    res.json({ loggedIn: false });
+  }
 });
 
 const PORT = process.env.PORT || 3000;
