@@ -1,0 +1,27 @@
+{
+  "name": "WhatsApp Message Sender",
+  "description": "Backend service to send WhatsApp messages automatically.",
+  "repository": "https://github.com/BILLNUTTER/whatsapp-message-sender",
+  "keywords": ["node", "whatsapp", "message", "automation"],
+  "env": {
+    "PORT": {
+      "description": "Port to run the server",
+      "value": "3000"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "echo 'App deployed successfully!'"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": []
+}
