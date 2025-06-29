@@ -58,6 +58,12 @@ function saveLog(email, message, numbers, status) {
   fs.writeFileSync(logDBPath, JSON.stringify(logs, null, 2));
 }
 
+// Local Storage Simulation Middleware
+app.use((req, res, next) => {
+  if (!req.session.localStore) req.session.localStore = {};
+  next();
+});
+
 // Register
 app.post("/register", async (req, res) => {
   const { email, phone, password } = req.body;
@@ -104,6 +110,7 @@ app.post("/login", async (req, res) => {
   }
 
   req.session.user = { email };
+  req.session.localStore.loggedIn = true;
   console.log(`User logged in: ${email}`);
   res.json({ success: true });
 });
@@ -230,6 +237,13 @@ app.get("/api/logs", requireAuth, (req, res) => {
   res.json(logs[req.session.user.email] || []);
 });
 
+app.get("/status", (req, res) => {
+  if (req.session.user) {
+    res.json({ loggedIn: true, email: req.session.user.email });
+  } else {
+    res.json({ loggedIn: false });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
