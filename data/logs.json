@@ -1,1 +1,94 @@
-{}
+{
+  "nutterxhosting@gmail.com": [
+    {
+      "message": "hello",
+      "numbers": [
+        "0758891491"
+      ],
+      "status": "failed",
+      "timestamp": "2026-10-26T03:00:36.588Z"
+    },
+    {
+      "message": "hello",
+      "numbers": [
+        "0758891491"
+      ],
+      "status": "failed",
+      "timestamp": "2026-10-26T03:02:05.473Z"
+    },
+    {
+      "message": "hello bro",
+      "numbers": [
+        "0713881613"
+      ],
+      "status": "failed",
+      "timestamp": "2026-10-26T03:06:36.812Z"
+    },
+    {
+      "message": "tuuy",
+      "numbers": [
+        "0713881613"
+      ],
+      "status": "failed",
+      "timestamp": "2026-10-26T03:25:30.066Z",
+      "sentCount": 0,
+      "failedCount": 1,
+      "error": "Timed Out",
+      "statusCode": 408
+    },
+    {
+      "message": "tuuy",
+      "numbers": [
+        "254713881613"
+      ],
+      "status": "success",
+      "timestamp": "2026-10-26T03:26:56.649Z",
+      "sentCount": 1,
+      "failedCount": 0
+    },
+    {
+      "message": "wow😍",
+      "numbers": [
+        "254708777125"
+      ],
+      "status": "success",
+      "timestamp": "2026-10-26T03:33:31.529Z",
+      "sentCount": 1,
+      "failedCount": 0
+    },
+    {
+      "message": "yooow",
+      "numbers": [
+        "254713881613"
+      ],
+      "status": "success",
+      "timestamp": "2026-10-26T04:49:22.462Z",
+      "sentCount": 1,
+      "failedCount": 0
+    },
+    {
+      "message": "kiu",
+      "numbers": [
+        "254708777125",
+        "254713881613"
+      ],
+      "status": "success",
+      "timestamp": "2026-10-26T10:48:15.219Z",
+      "sentCount": 2,
+      "failedCount": 0
+    }
+  ],
+  "nutterxconnect@gmail.com": [
+    {
+      "message": "kie",
+      "numbers": [
+        "254713881613",
+        "254758891491"
+      ],
+      "status": "success",
+      "timestamp": "2026-10-26T10:51:15.384Z",
+      "sentCount": 2,
+      "failedCount": 0
+    }
+  ]
+}

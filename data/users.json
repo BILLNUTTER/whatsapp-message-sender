@@ -1,1 +1,20 @@
-{}
+{
+  "nutterxhosting@gmail.com": {
+    "name": "Nutterx Hosting",
+    "email": "nutterxhosting@gmail.com",
+    "phone": "0758891491",
+    "password": "$2b$10$SiFWJlj/ThLHZ.1F3Cl9Q.mGvR5BClpw16Lls7nwV884F6k/eKblS",
+    "isActive": true,
+    "sessionStart": "2026-10-26T01:48:00.738Z",
+    "sessionExpires": "2026-11-25T01:48:00.738Z"
+  },
+  "nutterxconnect@gmail.com": {
+    "name": "Tash",
+    "email": "nutterxconnect@gmail.com",
+    "phone": "0708777125",
+    "password": "$2b$10$Ur8AKKyplgV84cQwocsRQe2PM4AlwVF0o65a5AhUz7ncYK1h6mTc6",
+    "isActive": true,
+    "sessionStart": "2026-10-26T10:38:24.868Z",
+    "sessionExpires": "2026-11-25T10:38:24.868Z"
+  }
+}
